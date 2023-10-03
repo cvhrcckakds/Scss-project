@@ -1,0 +1,68 @@
+@import "./variables";
+@import "./module";
+
+.section {
+  width: 99%;
+  height: 100%;
+
+  .container-css {
+    @include flex2;
+    @extend %container-css;
+    border-radius: 10px;
+
+    &-img {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+    }
+
+    &-sec {
+      flex: 1;
+      text-align: center;
+      font-weight: bold;
+      & h3 {
+        color: $primary-color;
+      }
+      & p {
+        color: $gray;
+        //@extent h3; yaparak miras alabilir rengibi h3 rengi yapabilirdik.
+      }
+    }
+  }
+
+  .vs {
+    text-align: center;
+    font-size: 30px;
+    color: $text-color;
+    font-weight: bold;
+
+    span {
+      color: $primary-color;
+    }
+  }
+
+  .container-sass {
+    @include flex2;
+    @extend %container-css;
+    border-radius: 10px;
+    //flex-direction: row-reverse;
+
+    &-sec {
+      flex-basis: 50%;
+      text-align: center;
+      font-weight: bold;
+      & h3 {
+        color: $primary-color;
+      }
+      & p {
+        color: $gray;
+        //@extent h3; yaparak miras alabilir rengibi h3 rengi yapabilirdik.
+      }
+    }
+    &-img {
+      display: flex;
+      justify-content: center;
+      flex-basis: 50%;
+    }
+  }
+}
